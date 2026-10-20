@@ -21,6 +21,7 @@ Processors move from data entry to exception handling.
 |---|---|
 | Live UI | https://main.dyc07h1e3zuao.amplifyapp.com (demo access key available on request) |
 | Deck (5 slides) | [`docs/deck/`](docs/deck/) slide sources (presented from the Slides artifact, which exports PPTX/PDF) |
+| Supporting deck (2 slides) | [`docs/deck-supporting/`](docs/deck-supporting/): the AWS architecture, then the evals threshold sweep and calibration. Kept out of the 5-slide deck on purpose |
 | Demo script · panel prep · value model | [`docs/demo_script.md`](docs/demo_script.md) · [`docs/panel_prep.md`](docs/panel_prep.md) · [`docs/value_model.md`](docs/value_model.md) |
 | Eval results | [`evals/results/summary.md`](evals/results/summary.md) |
 

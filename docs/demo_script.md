@@ -26,8 +26,8 @@ An 18-claim batch takes about 2 to 2.5 minutes at 6 in parallel. **Start it firs
 
 **If a live claim is slow:** "This is a real model call. While it runs…" and open one that's already done.
 **If the API fails:** switch to the local backup, or play the recording from the same timestamp.
-**Panel asks how you chose the threshold:** show `docs/evals/threshold_sweep.png` (appendix slide) and the OpenAI Evals dashboard.
-**Panel asks for the AWS view:** open `docs/architecture/claimpilot-architecture.pptx` (or the appendix slide) and walk the numbered steps 1–7.
+**Panel asks how you chose the threshold:** show `docs/evals/threshold_sweep.png` (supporting deck, slide 2) and the OpenAI Evals dashboard.
+**Panel asks for the AWS view:** open `docs/architecture/claimpilot-architecture.pptx` (or slide 1 of the supporting deck) and walk the numbered steps 1–7.
 
 ## Recording
 
