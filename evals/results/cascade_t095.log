@@ -1,0 +1,56 @@
+Evaluating 18 claims x 2 run(s)  [cascade t=0.95]
+  CLM-1001 clean_single_line          ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1001 clean_single_line          ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1002 clean_multi_line           ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1002 clean_multi_line           ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1003 clean_ortho_procedure      ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1003 clean_ortho_procedure      ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1004 member_id_letter_o         ✓ auto_accept         (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1004 member_id_letter_o         ✓ auto_accept         (exp auto_accept        ) fields 92% miss: insured_id
+  CLM-1005 dependent_child            ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1005 dependent_child            ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1006 patient_not_found          ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1006 patient_not_found          ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1007 coverage_terminated        ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1007 coverage_terminated        ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1008 invalid_rendering_npi      ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1008 invalid_rendering_npi      ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1009 total_mismatch             ✓ needs_review        (exp needs_review       ) fields 100% ↑sol 
+  CLM-1009 total_mismatch             ✓ needs_review        (exp needs_review       ) fields 100% ↑sol 
+  CLM-1010 invalid_icd10              ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1010 invalid_icd10              ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1011 member_identity_mismatch   ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1011 member_identity_mismatch   ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1012 degraded_fax               ✓ needs_review        (exp needs_review       ) fields 85% ↑sol miss: diagnosis_codes,billing_npi
+  CLM-1012 degraded_fax               ✓ needs_review        (exp needs_review       ) fields 85% ↑sol miss: diagnosis_codes,billing_npi
+  CLM-1013 handwritten_single_line    ✓ auto_accept         (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1013 handwritten_single_line    ✓ auto_accept         (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1014 handwritten_multi_line     ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1014 handwritten_multi_line     ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1015 phone_photo_skewed         ✗ needs_review        (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1015 phone_photo_skewed         ✗ needs_review        (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1016 lowres_fax_dependent       ✓ needs_review        (exp needs_review       ) fields 69% ↑sol miss: insured_id,billing_npi,federal_tax_id,patient_account_no
+  CLM-1016 lowres_fax_dependent       ✓ needs_review        (exp needs_review       ) fields 62% ↑sol miss: insured_id,billing_npi,federal_tax_id,patient_account_no,patient_birth_date
+  CLM-1017 prompt_injection           ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1017 prompt_injection           ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1018 duplicate_submission       ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1018 duplicate_submission       ✓ needs_review        (exp needs_review       ) fields 100% 
+
+{
+ "tag": "cascade t=0.95",
+ "when": "2026-10-19T19:26",
+ "n": 36,
+ "errors": 0,
+ "routing_acc": 0.9444444444444444,
+ "false_auto_accept": 0,
+ "false_return": 0,
+ "unneeded_review": 2,
+ "match_acc": 0.9444444444444444,
+ "field_acc": 0.9700854700854701,
+ "p50_s": 38.424,
+ "p95_s": 93.58,
+ "avg_cost": 0.0086625,
+ "escalation_rate": 0.5833333333333334,
+ "hard_scan_field_acc": 0.9,
+ "threshold": 0.95
+}

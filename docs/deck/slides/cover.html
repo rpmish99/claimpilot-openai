@@ -1,0 +1,26 @@
+<section id="cover" data-transition="fade" style="background:#0B1F24;color:#F6F7F4;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;flex-direction:column;gap:28px">
+<p style="font-size:28px;font-weight:600;color:#5EC4B6;letter-spacing:4px;text-transform:uppercase">OpenAI Platform &amp; APIs · Customer demo</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:150px;font-weight:700;line-height:1;letter-spacing:-3px;color:#F6F7F4">ClaimPilot</h1>
+<p style="font-size:44px;line-height:1.3;color:#BFD8D5;width:1300px">Paper claim intake for a regional health plan: less manual keying, faster turnaround, and fewer avoidable rejections.</p>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#12303A;border-top:4px solid #5EC4B6;padding:28px 32px">
+<p style="font-size:24px;color:#8FB5B0;text-transform:uppercase;letter-spacing:2px">Customer</p>
+<p style="font-size:30px;line-height:1.3;color:#F6F7F4"><b>Cascadia Health Plan</b><br>fictitious regional payer, 450k members</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#12303A;border-top:4px solid #5EC4B6;padding:28px 32px">
+<p style="font-size:24px;color:#8FB5B0;text-transform:uppercase;letter-spacing:2px">User</p>
+<p style="font-size:30px;line-height:1.3;color:#F6F7F4"><b>Claims intake processor</b><br>Claims Operations, front-end edits</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#12303A;border-top:4px solid #5EC4B6;padding:28px 32px">
+<p style="font-size:24px;color:#8FB5B0;text-transform:uppercase;letter-spacing:2px">Workflow</p>
+<p style="font-size:30px;line-height:1.3;color:#F6F7F4"><b>Paper, fax &amp; PDF claim intake</b><br>scanned form → checked FHIR claim</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#12303A;border-top:4px solid #F2A541;padding:28px 32px">
+<p style="font-size:24px;color:#8FB5B0;text-transform:uppercase;letter-spacing:2px">Surface</p>
+<p style="font-size:30px;line-height:1.3;color:#F6F7F4"><b>OpenAI Agents SDK</b><br>on the Responses API, hosted on AWS</p>
+</div>
+</div>
+<aside>Cascadia Health Plan is a fictitious regional payer with 450,000 members. I assume about 5% of its professional claims, roughly 300,000 a year, still arrive as paper, fax or PDF CMS-1500 forms; the national average is about 2% (CAQH 2024), and I show that case too. The user is the claims intake processor. One product surface: the OpenAI Platform, specifically the Agents SDK on the Responses API. AWS hosts the app and the FHIR data; every model call goes to OpenAI. All data in this demo is synthetic.</aside>
+</section>

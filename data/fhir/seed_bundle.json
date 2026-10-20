@@ -1,0 +1,3096 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:org-cascadia-health-plan",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-cascadia-health-plan",
+        "active": true,
+        "name": "Cascadia Health Plan",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "pay"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/org-cascadia-health-plan"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org-rose-city-family-med",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-rose-city-family-med",
+        "active": true,
+        "name": "Rose City Family Medicine",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1406515555"
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.4",
+            "value": "93-4417285"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-0142"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "4120 Se Hawthorne Blvd"
+            ],
+            "city": "Portland",
+            "state": "OR",
+            "postalCode": "97214"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/org-rose-city-family-med"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org-puget-sound-ortho",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-puget-sound-ortho",
+        "active": true,
+        "name": "Puget Sound Orthopedic Group",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1321521407"
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.4",
+            "value": "91-2287340"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-0187"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "1800 Minor Ave Ste 300"
+            ],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98101"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/org-puget-sound-ortho"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org-willamette-peds",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-willamette-peds",
+        "active": true,
+        "name": "Willamette Valley Pediatrics",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1179437250"
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.4",
+            "value": "93-1059926"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-0119"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "650 Court St Ne"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/org-willamette-peds"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-001",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-001",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1894751555"
+          }
+        ],
+        "name": [
+          {
+            "family": "Vasquez",
+            "given": [
+              "Elena"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-001"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-002",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-002",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1032086757"
+          }
+        ],
+        "name": [
+          {
+            "family": "Chen",
+            "given": [
+              "Robert"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-002"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-003",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-003",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1541429100"
+          }
+        ],
+        "name": [
+          {
+            "family": "Rao",
+            "given": [
+              "Anita"
+            ],
+            "suffix": [
+              "DO"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-003"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-004",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-004",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1633554161"
+          }
+        ],
+        "name": [
+          {
+            "family": "Okonkwo",
+            "given": [
+              "Thomas"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-004"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-005",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-005",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1213045606"
+          }
+        ],
+        "name": [
+          {
+            "family": "Bergstrom",
+            "given": [
+              "Julia"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-005"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-006",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-006",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1617946284"
+          }
+        ],
+        "name": [
+          {
+            "family": "Ibarra",
+            "given": [
+              "David"
+            ],
+            "suffix": [
+              "PA-C"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-006"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-007",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-007",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1983873443"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mcallister",
+            "given": [
+              "Sarah"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-007"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-008",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-008",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1920653791"
+          }
+        ],
+        "name": [
+          {
+            "family": "Asante",
+            "given": [
+              "Kwame"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-008"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-009",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-009",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1655179749"
+          }
+        ],
+        "name": [
+          {
+            "family": "Petrova",
+            "given": [
+              "Laura"
+            ],
+            "suffix": [
+              "NP"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-009"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:prac-010",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "prac-010",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1056366390"
+          }
+        ],
+        "name": [
+          {
+            "family": "Hayes",
+            "given": [
+              "Michael"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/prac-010"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-001",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP318372983-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Brennan",
+            "given": [
+              "Mateo",
+              "R"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1952-01-19",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-8688"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "1488 Cedar Ave"
+            ],
+            "city": "Eugene",
+            "state": "OR",
+            "postalCode": "97401"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-001"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-002",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-002",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP755932699-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mendoza",
+            "given": [
+              "Priya",
+              "D"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1998-10-14",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-5615"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "9829 Burnside St"
+            ],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98103"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-002"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-003",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-003",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP336472552-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Castellano",
+            "given": [
+              "Marcus",
+              "A"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1987-03-26",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-6718"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "5502 Alder St"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-003"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-004",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-004",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP281622220-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Brennan",
+            "given": [
+              "Naomi",
+              "K"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1967-01-11",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(541) 555-7504"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "6150 Alder St"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-004"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-005",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-005",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP400172305-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Castellano",
+            "given": [
+              "Marcus",
+              "K"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1992-05-02",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(253) 555-9249"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "841 Laurelhurst Pl"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-005"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-006",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-006",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP455673751-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Reyes",
+            "given": [
+              "Hannah",
+              "D"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1974-02-01",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(541) 555-6709"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "7995 Hawthorne Blvd"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-006"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-007",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-007",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP222572551-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Kowalski",
+            "given": [
+              "Priya",
+              "S"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1967-08-04",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(541) 555-4991"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "7884 Alder St"
+            ],
+            "city": "Portland",
+            "state": "OR",
+            "postalCode": "97214"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-007"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-008",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-008",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP156445998-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Lindqvist",
+            "given": [
+              "Emily",
+              "M"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1979-10-16",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-2413"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "6402 Fremont Ave N"
+            ],
+            "city": "Tacoma",
+            "state": "WA",
+            "postalCode": "98405"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-008"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-009",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-009",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP256743402-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Holloway",
+            "given": [
+              "Liam",
+              "D"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1951-01-16",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(541) 555-6097"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "5512 Burnside St"
+            ],
+            "city": "Bellevue",
+            "state": "WA",
+            "postalCode": "98004"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-009"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-010",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-010",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP201754172-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Brennan",
+            "given": [
+              "Emily",
+              "C"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1969-12-14",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-6858"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "3112 Alder St"
+            ],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98103"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-010"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-011",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-011",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP376532741-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Abernathy",
+            "given": [
+              "Naomi",
+              "E"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1999-10-13",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-1588"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "2468 Fremont Ave N"
+            ],
+            "city": "Portland",
+            "state": "OR",
+            "postalCode": "97214"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-011"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-012",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-012",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP317709710-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Thornton",
+            "given": [
+              "Elijah",
+              "A"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1971-12-01",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(253) 555-7085"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "4397 Alder St"
+            ],
+            "city": "Bellevue",
+            "state": "WA",
+            "postalCode": "98004"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-012"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-013",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-013",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP240401635-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Kowalski",
+            "given": [
+              "Naomi",
+              "M"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1972-09-08",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-1267"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "4760 Cedar Ave"
+            ],
+            "city": "Tacoma",
+            "state": "WA",
+            "postalCode": "98405"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-013"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-014",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-014",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP472786534-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Nakamura",
+            "given": [
+              "Grace",
+              "K"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1979-03-01",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(253) 555-7462"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "4960 Hawthorne Blvd"
+            ],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98103"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-014"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-015",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-015",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP586011370-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Okafor",
+            "given": [
+              "Samuel",
+              "T"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1957-11-19",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-7749"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "6357 Hawthorne Blvd"
+            ],
+            "city": "Portland",
+            "state": "OR",
+            "postalCode": "97214"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-015"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-016",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-016",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP434830659-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Holloway",
+            "given": [
+              "Elijah",
+              "S"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1999-11-05",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(541) 555-9399"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "2040 Division St"
+            ],
+            "city": "Eugene",
+            "state": "OR",
+            "postalCode": "97401"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-016"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-017",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-017",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP976975571-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mendoza",
+            "given": [
+              "Priya",
+              "B"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1987-08-02",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-9981"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "9840 Burnside St"
+            ],
+            "city": "Tacoma",
+            "state": "WA",
+            "postalCode": "98405"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-017"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-018",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-018",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP924365957-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Brennan",
+            "given": [
+              "Marcus",
+              "E"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1952-05-18",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-9089"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "1275 Cedar Ave"
+            ],
+            "city": "Tacoma",
+            "state": "WA",
+            "postalCode": "98405"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-018"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-019",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-019",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP707355700-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Desai",
+            "given": [
+              "Naomi",
+              "A"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1968-05-04",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-5967"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "904 Alder St"
+            ],
+            "city": "Tacoma",
+            "state": "WA",
+            "postalCode": "98405"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-019"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-020",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-020",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP470881048-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Nakamura",
+            "given": [
+              "Kenji",
+              "J"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1992-07-10",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(206) 555-3236"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "9868 Hawthorne Blvd"
+            ],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98103"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-020"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-021",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-021",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP209542020-01"
+          }
+        ],
+        "name": [
+          {
+            "family": "Desai",
+            "given": [
+              "Hannah",
+              "A"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1977-01-11",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-9415"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "4554 Lake City Way"
+            ],
+            "city": "Portland",
+            "state": "OR",
+            "postalCode": "97214"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-021"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-022",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-022",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP318372983-02"
+          }
+        ],
+        "name": [
+          {
+            "family": "Brennan",
+            "given": [
+              "Maria",
+              "S"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2016-12-03",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(253) 555-4736"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "1488 Cedar Ave"
+            ],
+            "city": "Eugene",
+            "state": "OR",
+            "postalCode": "97401"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-022"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-023",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-023",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP755932699-02"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mendoza",
+            "given": [
+              "Emily",
+              "R"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2018-09-26",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(253) 555-4941"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "9829 Burnside St"
+            ],
+            "city": "Seattle",
+            "state": "WA",
+            "postalCode": "98103"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-023"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-024",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-024",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP336472552-02"
+          }
+        ],
+        "name": [
+          {
+            "family": "Castellano",
+            "given": [
+              "Priya",
+              "R"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2012-12-25",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(503) 555-7486"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "5502 Alder St"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-024"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:pat-025",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "pat-025",
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP281622220-02"
+          }
+        ],
+        "name": [
+          {
+            "family": "Brennan",
+            "given": [
+              "Sofia",
+              "J"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2012-02-11",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(253) 555-2707"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "6150 Alder St"
+            ],
+            "city": "Salem",
+            "state": "OR",
+            "postalCode": "97301"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/pat-025"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-001",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-001",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP318372983"
+          }
+        ],
+        "subscriberId": "CHP318372983",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-001"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-001"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-001"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-002",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-002",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP755932699"
+          }
+        ],
+        "subscriberId": "CHP755932699",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-002"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-002"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-77310",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-002"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-003",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-003",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP336472552"
+          }
+        ],
+        "subscriberId": "CHP336472552",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-003"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-003"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-003"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-004",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-004",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP281622220"
+          }
+        ],
+        "subscriberId": "CHP281622220",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-004"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-004"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-004"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-005",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-005",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP400172305"
+          }
+        ],
+        "subscriberId": "CHP400172305",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-005"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-005"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-005"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-006",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-006",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP455673751"
+          }
+        ],
+        "subscriberId": "CHP455673751",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-006"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-006"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-006"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-007",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-007",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP222572551"
+          }
+        ],
+        "subscriberId": "CHP222572551",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-007"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-007"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-06-30"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-007"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-008",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-008",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP156445998"
+          }
+        ],
+        "subscriberId": "CHP156445998",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-008"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-008"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55940",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-008"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-009",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-009",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP256743402"
+          }
+        ],
+        "subscriberId": "CHP256743402",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-009"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-009"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-009"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-010",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-010",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP201754172"
+          }
+        ],
+        "subscriberId": "CHP201754172",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-010"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-010"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-010"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-011",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-011",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP376532741"
+          }
+        ],
+        "subscriberId": "CHP376532741",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-011"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-011"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-77310",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-011"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-012",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-012",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP317709710"
+          }
+        ],
+        "subscriberId": "CHP317709710",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-012"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-012"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55940",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-012"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-013",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-013",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP240401635"
+          }
+        ],
+        "subscriberId": "CHP240401635",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-013"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-013"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-013"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-014",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-014",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP472786534"
+          }
+        ],
+        "subscriberId": "CHP472786534",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-014"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-014"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-014"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-015",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-015",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP586011370"
+          }
+        ],
+        "subscriberId": "CHP586011370",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-015"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-015"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-015"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-016",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-016",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP434830659"
+          }
+        ],
+        "subscriberId": "CHP434830659",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-016"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-016"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55940",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-016"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-017",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-017",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP976975571"
+          }
+        ],
+        "subscriberId": "CHP976975571",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-017"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-017"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-017"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-018",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-018",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP924365957"
+          }
+        ],
+        "subscriberId": "CHP924365957",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-018"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-018"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-018"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-019",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-019",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP707355700"
+          }
+        ],
+        "subscriberId": "CHP707355700",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-019"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-019"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-019"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-020",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-020",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP470881048"
+          }
+        ],
+        "subscriberId": "CHP470881048",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-020"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-020"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-77310",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-020"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-021",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-021",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP209542020"
+          }
+        ],
+        "subscriberId": "CHP209542020",
+        "dependent": "01",
+        "subscriber": {
+          "reference": "Patient/pat-021"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-021"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-021"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-022",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-022",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP318372983"
+          }
+        ],
+        "subscriberId": "CHP318372983",
+        "dependent": "02",
+        "subscriber": {
+          "reference": "Patient/pat-001"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-022"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "child"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-022"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-023",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-023",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP755932699"
+          }
+        ],
+        "subscriberId": "CHP755932699",
+        "dependent": "02",
+        "subscriber": {
+          "reference": "Patient/pat-002"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-023"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "child"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-77310",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-023"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-024",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-024",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP336472552"
+          }
+        ],
+        "subscriberId": "CHP336472552",
+        "dependent": "02",
+        "subscriber": {
+          "reference": "Patient/pat-003"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-024"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "child"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "WA-71846",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-024"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cov-pat-025",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-pat-025",
+        "status": "active",
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/member-id",
+            "value": "CHP281622220"
+          }
+        ],
+        "subscriberId": "CHP281622220",
+        "dependent": "02",
+        "subscriber": {
+          "reference": "Patient/pat-004"
+        },
+        "beneficiary": {
+          "reference": "Patient/pat-025"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "child"
+            }
+          ]
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "payor": [
+          {
+            "reference": "Organization/org-cascadia-health-plan"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "OR-55021",
+            "name": "Cascadia Choice PPO"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Coverage/cov-pat-025"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:claim-history-1018",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "claim-history-1018",
+        "status": "active",
+        "use": "claim",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/pat-004"
+        },
+        "created": "2026-10-07",
+        "billablePeriod": {
+          "start": "2026-10-05",
+          "end": "2026-10-05"
+        },
+        "insurer": {
+          "reference": "Organization/org-cascadia-health-plan"
+        },
+        "provider": {
+          "reference": "Organization/org-rose-city-family-med"
+        },
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+              "code": "normal"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://cascadiahealth.example/patient-account",
+            "value": "RC-20944"
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "Coverage/cov-pat-004"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "99213"
+                }
+              ]
+            },
+            "servicedDate": "2026-10-05",
+            "net": {
+              "value": 145.0,
+              "currency": "USD"
+            }
+          }
+        ],
+        "total": {
+          "value": 145.0,
+          "currency": "USD"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Claim/claim-history-1018"
+      }
+    }
+  ]
+}

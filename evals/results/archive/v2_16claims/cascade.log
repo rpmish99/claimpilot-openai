@@ -1,0 +1,49 @@
+Evaluating 16 claims x 2 run(s)  [cascade (luna→sol)]
+  CLM-1001 clean_single_line          ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1001 clean_single_line          ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1002 clean_multi_line           ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1002 clean_multi_line           ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1003 clean_ortho_procedure      ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1003 clean_ortho_procedure      ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1004 member_id_letter_o         ✓ auto_accept         (exp auto_accept        ) fields 92% miss: insured_id
+  CLM-1004 member_id_letter_o         ✓ auto_accept         (exp auto_accept        ) fields 92% miss: insured_id
+  CLM-1005 dependent_child            ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1005 dependent_child            ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1006 patient_not_found          ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1006 patient_not_found          ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1007 coverage_terminated        ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1007 coverage_terminated        ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1008 invalid_rendering_npi      ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1008 invalid_rendering_npi      ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1009 total_mismatch             ✓ needs_review        (exp needs_review       ) fields 100% ↑sol 
+  CLM-1009 total_mismatch             ✓ needs_review        (exp needs_review       ) fields 100% ↑sol 
+  CLM-1010 invalid_icd10              ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1010 invalid_icd10              ✓ return_to_provider  (exp return_to_provider ) fields 100% ↑sol 
+  CLM-1011 member_identity_mismatch   ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1011 member_identity_mismatch   ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1012 degraded_fax               ✓ needs_review        (exp needs_review       ) fields 77% ↑sol miss: diagnosis_codes,billing_npi,federal_tax_id
+  CLM-1012 degraded_fax               ✓ needs_review        (exp needs_review       ) fields 77% ↑sol miss: diagnosis_codes,billing_npi,federal_tax_id
+  CLM-1013 handwritten_single_line    ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1013 handwritten_single_line    ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1014 handwritten_multi_line     ✓ auto_accept         (exp auto_accept        ) fields 92% ↑sol miss: cpt_codes
+  CLM-1014 handwritten_multi_line     ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1015 phone_photo_skewed         ✓ auto_accept         (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1015 phone_photo_skewed         ✓ auto_accept         (exp auto_accept        ) fields 100% ↑sol 
+  CLM-1016 lowres_fax_dependent       ✓ needs_review        (exp needs_review       ) fields 54% ↑sol miss: insured_id,cpt_codes,billing_npi,federal_tax_id,patient_account_no,patient_birth_date
+  CLM-1016 lowres_fax_dependent       ✓ needs_review        (exp needs_review       ) fields 54% ↑sol miss: insured_id,cpt_codes,billing_npi,federal_tax_id,patient_account_no,patient_birth_date
+
+{
+ "tag": "cascade (luna\u2192sol)",
+ "when": "2026-10-19T11:45",
+ "n": 32,
+ "errors": 0,
+ "routing_acc": 1.0,
+ "false_auto_accept": 0,
+ "match_acc": 0.9375,
+ "field_acc": 0.9495192307692307,
+ "p50_s": 20.898,
+ "p95_s": 67.756,
+ "avg_cost": 0.0103765625,
+ "escalation_rate": 0.40625,
+ "hard_scan_field_acc": 0.8538461538461538
+}

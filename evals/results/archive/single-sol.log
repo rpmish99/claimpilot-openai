@@ -1,0 +1,27 @@
+Evaluating 12 claims x 1 run(s)  [single-model-sol]
+  CLM-1001 clean_single_line          ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1002 clean_multi_line           ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1003 clean_ortho_procedure      ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1004 member_id_letter_o         ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1005 dependent_child            ✓ auto_accept         (exp auto_accept        ) fields 100% 
+  CLM-1006 patient_not_found          ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1007 coverage_terminated        ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1008 invalid_rendering_npi      ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1009 total_mismatch             ✓ needs_review        (exp needs_review       ) fields 100% 
+  CLM-1010 invalid_icd10              ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1011 member_identity_mismatch   ✓ return_to_provider  (exp return_to_provider ) fields 100% 
+  CLM-1012 degraded_fax               ✓ needs_review        (exp needs_review       ) fields 77% miss: diagnosis_codes,billing_npi,federal_tax_id
+
+{
+ "tag": "single-model-sol",
+ "when": "2026-10-19T11:01",
+ "n": 12,
+ "errors": 0,
+ "routing_acc": 1.0,
+ "false_auto_accept": 0,
+ "match_acc": 1.0,
+ "field_acc": 0.9807692307692307,
+ "p50_s": 25.473,
+ "p95_s": 45.893,
+ "avg_cost": 0.0291975
+}

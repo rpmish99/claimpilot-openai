@@ -1,0 +1,39 @@
+<section id="results" data-transition="fade" style="background:#F6F7F4;color:#14262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;color:#0F766E;letter-spacing:3px;text-transform:uppercase">Demo flow and measured results</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;color:#14262B">No incorrect auto-accepts or provider rejections in testing, at about 1¢ per claim</h2>
+</div>
+<div style="display:flex;gap:48px;flex:1">
+<div style="width:620px;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:32px;font-weight:600;color:#14262B">Live in the demo</h3>
+<div style="display:flex;flex-direction:column;gap:4px;background:#FFFFFF;border-left:6px solid #0F766E;padding:14px 22px">
+<p style="font-size:26px;font-weight:600;color:#0B5F58">An 18-claim batch drop</p>
+<p style="font-size:24px;line-height:1.3;color:#3E4F54">S3 → SQS → Lambda, 6 at a time, one SNS summary when done</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;background:#FFFFFF;border-left:6px solid #0F766E;padding:14px 22px">
+<p style="font-size:26px;font-weight:600;color:#0B5F58">Member ID typed with a letter O</p>
+<p style="font-size:24px;line-height:1.3;color:#3E4F54">Agent retries with a zero and matches name and DOB. Correction logged</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;background:#FFFFFF;border-left:6px solid #0F766E;padding:14px 22px">
+<p style="font-size:26px;font-weight:600;color:#0B5F58">Phone photo of a paper form</p>
+<p style="font-size:24px;line-height:1.3;color:#3E4F54">Poor scan escalates luna → sol; an unreadable billing NPI goes to a processor</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;background:#FFFFFF;border-left:6px solid #D97706;padding:14px 22px">
+<p style="font-size:26px;font-weight:600;color:#8A4B08">Smudged fax, duplicate, prompt injection</p>
+<p style="font-size:24px;line-height:1.3;color:#3E4F54">Review or return, never auto-accepted. Processor edits become eval data</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#14262B">Evals: 18 labeled claims × 2 runs</h3>
+<table style="font-size:28px;color:#14262B;background:#FFFFFF;border:2px solid #DDE3E1;border-radius:12px">
+<tr><th style="width:36%;text-align:left">Config</th><th style="width:15%;text-align:right">Routing</th><th style="width:17%;text-align:right">Unsafe</th><th style="width:17%;text-align:right">Cost</th><th style="width:15%;text-align:right">p50</th></tr>
+<tr><td>luna only</td><td style="text-align:right">94%</td><td style="text-align:right">0</td><td style="text-align:right">0.09¢</td><td style="text-align:right">19s</td></tr>
+<tr><td>sol only</td><td style="text-align:right">92%</td><td style="text-align:right">0</td><td style="text-align:right">1.09¢</td><td style="text-align:right">24s</td></tr>
+<tr style="background:#E3F2EF"><td><b>cascade @ 0.90</b></td><td style="text-align:right"><b>94%</b></td><td style="text-align:right"><b>0</b></td><td style="text-align:right"><b>0.88¢</b></td><td style="text-align:right"><b>41s</b></td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#3E4F54">All three were safe on this set, so it can’t rank them on safety. The fast model alone costs a ninth as much. <b>The cascade is insurance</b>: about 0.8¢ more per claim, and it pays for itself if it prevents one wrongful return in roughly 400 to 900 claims.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7A7E">Synthetic, edge-case-heavy set (58% escalated); 36 runs per row; also in OpenAI Evals. A pilot re-measures on 500+ real scans.</p>
+<aside>Start the 18-claim batch first: it lands in S3, each file becomes an SQS message, and Lambda works through them 6 at a time. That number is a setting, kept low on this demo account so the app stays responsive. One SNS summary arrives when the last claim lands. While it runs: the letter-O member ID is retried with a zero, confirmed by name and birth date, and logged as a correction. The phone photo escalates from gpt-6-luna to gpt-6.1-sol, and an unreadable billing NPI sends it to a processor. On the evals, 18 claims including a prompt-injection attempt and a duplicate, 36 runs per row: the fast model alone, the strong model alone and the cascade all had zero wrong auto-accepts and zero wrong returns, so this set can't rank them on safety. Cost differs: 0.09 cents, 1.09 cents and 0.88 cents per claim. I keep the cascade as insurance. In development the fast model alone once wrongly returned a correct claim, and a live batch caught it misreading a handwritten member ID at high confidence, which is why returns are now always confirmed by the strong model. With 36 clean runs I can only say the failure rate is below about 8%. The cascade costs about 0.8 cents more per claim, and breaks even if it prevents one wrongful return in roughly 400 to 900 claims, using CAQH's $3.15 to $7.35 to submit a claim again. The evals also found two bugs in my own rule checks, which I fixed and covered with tests.</aside>
+</section>

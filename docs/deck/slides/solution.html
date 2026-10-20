@@ -1,0 +1,58 @@
+<section id="solution" data-transition="fade" style="background:#F6F7F4;color:#14262B;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;color:#0F766E;letter-spacing:3px;text-transform:uppercase">The solution</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;color:#14262B">Models read and match; code makes the decision</h2>
+</div>
+<div style="display:flex;gap:16px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#E3F2EF;border:2px solid #9ED3CB;border-radius:14px;padding:24px 24px">
+<p style="font-size:24px;font-weight:600;color:#0B5F58">1 · EXTRACT</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2;color:#14262B">Extraction Agent</h3>
+<p style="font-size:24px;line-height:1.35;color:#3E4F54">PDF scan → strict schema. gpt-6-luna reads; code escalates to gpt-6.1-sol when the scan is poor or a field is unsure</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFFFF;border:2px solid #DDE3E1;border-radius:14px;padding:24px 24px">
+<p style="font-size:24px;font-weight:600;color:#6A7A7E">2 · VALIDATE</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2;color:#14262B">Rules in code</h3>
+<p style="font-size:24px;line-height:1.35;color:#3E4F54">NPI check digit, ICD-10 and CPT format, dates, totals. Each rule has an ID and a route</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#E3F2EF;border:2px solid #9ED3CB;border-radius:14px;padding:24px 24px">
+<p style="font-size:24px;font-weight:600;color:#0B5F58">3 · RESOLVE</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2;color:#14262B">Resolution Agent</h3>
+<p style="font-size:24px;line-height:1.35;color:#3E4F54">5 typed FHIR tools on HealthLake: match member, coverage and providers, then create the Claim. Output guardrail</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFFFF;border:2px solid #DDE3E1;border-radius:14px;padding:24px 24px">
+<p style="font-size:24px;font-weight:600;color:#6A7A7E">4 · DECIDE</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2;color:#14262B">Supervisor in code</h3>
+<p style="font-size:24px;line-height:1.35;color:#3E4F54">Verifies unsure fields against FHIR, then routes: auto-accept, review or return</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFF4E5;border:2px solid #F2C98A;border-radius:14px;padding:24px 24px">
+<p style="font-size:24px;font-weight:600;color:#8A4B08">5 · HUMAN</p>
+<h3 style="font-size:30px;font-weight:600;line-height:1.2;color:#14262B">Processor review</h3>
+<p style="font-size:24px;line-height:1.35;color:#3E4F54">Exceptions arrive explained. One-click approve or return, with an editable provider message</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-size:24px;font-weight:600;color:#0B5F58">OPENAI PLATFORM · every model call</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">Agents SDK</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">Responses API</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">PDF / vision input</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">Structured Outputs</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">Strict function tools</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">Output guardrail</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">Traces</p>
+<p style="font-size:24px;background:#0F766E;color:#F6F7F4;padding:8px 18px;border-radius:999px">store=false</p>
+</div>
+<p style="font-size:24px;font-weight:600;color:#6A7A7E">AWS · the customer’s account hosts the app and the data</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">Amplify UI</p>
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">API Gateway + Lambda</p>
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">S3 inbox</p>
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">HealthLake (FHIR R4)</p>
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">DynamoDB audit trail</p>
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">SNS</p>
+<p style="font-size:24px;background:#E6E9E7;color:#2B3A3E;padding:8px 18px;border-radius:999px">Secrets Manager</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7A7E">Business rules live in code, so they are testable and auditable; the models can explain a rule finding but cannot overrule it.</p>
+<aside>Two agents, each with one job, run in a fixed order by ordinary code. The Extraction Agent is perception only: no tools, strict schema. The Resolution Agent uses five typed, least-privilege tools against HealthLake. The validators, the check against FHIR records, the guardrail and the final routing are code, so no prompt wording can talk a claim past a rule. No agent handoffs: the workflow is known ahead of time, so a model never chooses the next step. AWS hosts the app and the FHIR data; only the document and lookup results go to OpenAI, per call.</aside>
+</section>

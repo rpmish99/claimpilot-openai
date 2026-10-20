@@ -1,0 +1,225 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  ClaimPilot - claims intake automation. AWS hosts the app and data; all model calls go to the
+  OpenAI API (Agents SDK). HealthLake is created separately (scripts/healthlake.py) because it is
+  slow to create and has its own lifecycle.
+
+Parameters:
+  HealthLakeDatastoreId:
+    Type: String
+    Description: ID of the HealthLake FHIR R4 datastore (from scripts/healthlake.py create)
+  AppSecretArn:
+    Type: String
+    Description: Secrets Manager secret holding {"OPENAI_API_KEY":..., "DEMO_ACCESS_KEY":...}
+  NotificationEmail:
+    Type: String
+    Description: Email address subscribed to processor/provider notifications
+  AllowedOrigin:
+    Type: String
+    Default: https://main.dyc07h1e3zuao.amplifyapp.com
+    Description: CORS origin for the hosted web UI (Amplify). localhost:5173 is also allowed for development.
+  MaxConcurrentClaims:
+    Type: Number
+    Default: 6
+    MinValue: 2
+    Description: >
+      Claims processed in parallel. Size it against the OpenAI rate limits for your tier and the account's
+      Lambda concurrency quota, and leave room for the UI's API function (new AWS accounts start at 10).
+  ExtractionModel:
+    Type: String
+    Default: gpt-6-luna
+  EscalationModel:
+    Type: String
+    Default: gpt-6.1-sol
+  ResolutionModel:
+    Type: String
+    Default: gpt-6-luna
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Architectures: [arm64]
+    CodeUri: src/
+    Environment:
+      Variables:
+        CLAIMS_BUCKET: !Sub claimpilot-${AWS::AccountId}-${AWS::Region}
+        INTAKE_TABLE: !Ref IntakeTable
+        HEALTHLAKE_ENDPOINT: !Sub https://healthlake.${AWS::Region}.amazonaws.com/datastore/${HealthLakeDatastoreId}/r4/
+        SNS_TOPIC_ARN: !Ref NotificationTopic
+        APP_SECRET_ARN: !Ref AppSecretArn
+        EXTRACTION_MODEL: !Ref ExtractionModel
+        ESCALATION_MODEL: !Ref EscalationModel
+        RESOLUTION_MODEL: !Ref ResolutionModel
+        TRACE_INCLUDE_SENSITIVE_DATA: "true"   # synthetic data only; "false" for anything resembling PHI
+
+Resources:
+  ClaimsBucket:
+    Type: AWS::S3::Bucket
+    DependsOn: IntakeQueuePolicy  # S3 validates it may send to the queue when the notification is created
+    Properties:
+      NotificationConfiguration:
+        QueueConfigurations:
+          - Event: s3:ObjectCreated:*
+            Queue: !GetAtt IntakeQueue.Arn
+            Filter:
+              S3Key:
+                Rules:
+                  - { Name: prefix, Value: inbox/ }
+                  - { Name: suffix, Value: .pdf }
+          - Event: s3:ObjectCreated:*
+            Queue: !GetAtt IntakeQueue.Arn
+            Filter:
+              S3Key:
+                Rules:
+                  - { Name: prefix, Value: batches/ }
+      BucketName: !Sub claimpilot-${AWS::AccountId}-${AWS::Region}
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault: { SSEAlgorithm: AES256 }
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      LifecycleConfiguration:
+        Rules:
+          - Id: expire-inbox
+            Status: Enabled
+            Prefix: inbox/
+            ExpirationInDays: 30
+      CorsConfiguration:
+        CorsRules:
+          - AllowedMethods: [PUT, GET]
+            AllowedOrigins: [!Ref AllowedOrigin, "http://localhost:5173"]
+            AllowedHeaders: ["*"]
+            MaxAge: 3000
+
+  IntakeTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: intake_id, AttributeType: S }
+      KeySchema:
+        - { AttributeName: intake_id, KeyType: HASH }
+      SSESpecification: { SSEEnabled: true }
+
+  NotificationTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: claimpilot-notifications
+      Subscription:
+        - Protocol: email
+          Endpoint: !Ref NotificationEmail
+
+  DeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: claimpilot-dlq
+      MessageRetentionPeriod: 1209600
+      SqsManagedSseEnabled: true
+
+  # Every claim, single upload or one file of a batch drop, is one message. The queue absorbs a
+  # batch arriving all at once; the consumer's MaximumConcurrency caps how many claims run in parallel.
+  IntakeQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: claimpilot-intake
+      VisibilityTimeout: 1800          # 6x the function timeout
+      MessageRetentionPeriod: 345600   # 4 days
+      SqsManagedSseEnabled: true
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+        maxReceiveCount: 3
+
+  IntakeQueuePolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      Queues: [!Ref IntakeQueue]
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal: { Service: s3.amazonaws.com }
+            Action: sqs:SendMessage
+            Resource: !GetAtt IntakeQueue.Arn
+            Condition:
+              ArnEquals: { aws:SourceArn: !Sub "arn:aws:s3:::claimpilot-${AWS::AccountId}-${AWS::Region}" }
+              StringEquals: { aws:SourceAccount: !Ref AWS::AccountId }
+
+  ProcessFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Deterministic supervisor - Extraction Agent, validators, Resolution Agent, decision, notify
+      Handler: handlers.process_handler
+      Timeout: 300
+      MemorySize: 1024
+      Policies:
+        - S3ReadPolicy: { BucketName: !Sub "claimpilot-${AWS::AccountId}-${AWS::Region}" }
+        - DynamoDBCrudPolicy: { TableName: !Ref IntakeTable }
+        - SNSPublishMessagePolicy: { TopicName: !GetAtt NotificationTopic.TopicName }
+        - Statement:
+            - Effect: Allow
+              Action: secretsmanager:GetSecretValue
+              Resource: !Ref AppSecretArn
+            - Effect: Allow
+              Action: [healthlake:SearchWithGet, healthlake:ReadResource, healthlake:CreateResource, healthlake:UpdateResource]
+              Resource: !Sub arn:aws:healthlake:${AWS::Region}:${AWS::AccountId}:datastore/fhir/${HealthLakeDatastoreId}
+      Events:
+        IntakeMessages:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt IntakeQueue.Arn
+            BatchSize: 1                       # one claim per invocation: isolated failures and timeouts
+            FunctionResponseTypes: [ReportBatchItemFailures]
+            ScalingConfig:
+              MaximumConcurrency: !Ref MaxConcurrentClaims
+
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Web UI API - intake upload, samples, status, human review
+      Handler: handlers.api_handler
+      Timeout: 29
+      MemorySize: 512
+      Policies:
+        - S3CrudPolicy: { BucketName: !Sub "claimpilot-${AWS::AccountId}-${AWS::Region}" }
+        - DynamoDBCrudPolicy: { TableName: !Ref IntakeTable }
+        - SNSPublishMessagePolicy: { TopicName: !GetAtt NotificationTopic.TopicName }
+        - Statement:
+            - Effect: Allow
+              Action: secretsmanager:GetSecretValue
+              Resource: !Ref AppSecretArn
+            - Effect: Allow
+              Action: [healthlake:SearchWithGet, healthlake:ReadResource, healthlake:CreateResource, healthlake:UpdateResource]
+              Resource: !Sub arn:aws:healthlake:${AWS::Region}:${AWS::AccountId}:datastore/fhir/${HealthLakeDatastoreId}
+      Events:
+        Api:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /{proxy+}
+            Method: ANY
+
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins: [!Ref AllowedOrigin, "http://localhost:5173"]
+        AllowHeaders: [content-type, x-demo-key]
+        AllowMethods: [GET, POST, OPTIONS]
+        MaxAge: 600
+
+Outputs:
+  ApiUrl:
+    Value: !Sub https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com
+  BucketName:
+    Value: !Ref ClaimsBucket
+  TableName:
+    Value: !Ref IntakeTable
+  TopicArn:
+    Value: !Ref NotificationTopic
+  DeadLetterQueueUrl:
+    Value: !Ref DeadLetterQueue
+  IntakeQueueUrl:
+    Value: !Ref IntakeQueue

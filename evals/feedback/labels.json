@@ -1,0 +1,40 @@
+[
+  {
+    "claim_id": "FB-00199eaa02",
+    "path": "evals/feedback/files/00199eaa02.pdf",
+    "source": "processor_review",
+    "scenario": "processor_review",
+    "note": "Verified against the scan",
+    "expected_route": "auto_accept",
+    "system_route_at_review": "needs_review",
+    "field_corrections": {},
+    "printed": {
+      "partial": true,
+      "insured_id": "CHP472786534",
+      "patient_last_name": "NAKAMURA",
+      "patient_first_name": "GRACE",
+      "patient_birth_date": "1979-03-01",
+      "billing_npi": "1321521407",
+      "total_charge": "655.00"
+    }
+  },
+  {
+    "claim_id": "FB-684c02ddc2",
+    "path": "evals/feedback/files/684c02ddc2.pdf",
+    "source": "processor_review",
+    "scenario": "processor_review",
+    "note": "Duplicate of claim-history-1018",
+    "expected_route": "return_to_provider",
+    "system_route_at_review": "needs_review",
+    "field_corrections": {},
+    "printed": {
+      "partial": true,
+      "insured_id": "CHP281622220",
+      "patient_last_name": "BRENNAN",
+      "patient_first_name": "NAOMI",
+      "patient_birth_date": "1967-01-11",
+      "billing_npi": "1406515555",
+      "total_charge": "145.00"
+    }
+  }
+]

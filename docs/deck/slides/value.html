@@ -1,0 +1,30 @@
+<section id="value" data-transition="fade" style="background:#0B1F24;color:#F6F7F4;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:grid;grid-template-columns:720px 1fr;gap:64px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;font-weight:600;color:#5EC4B6;letter-spacing:3px;text-transform:uppercase">Expected value</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:150px;font-weight:700;line-height:1;color:#F6F7F4">$1.29M</h1>
+<p style="font-size:36px;line-height:1.3;color:#F6F7F4">a year of processor capacity, about 17 FTEs, at 60% auto-accept and 5% of claims on paper</p>
+<p style="font-size:26px;line-height:1.45;color:#BFD8D5">$5.07 → $0.77 per claim. At the 2% national paper share: $0.52M, about 7 FTEs. Across paper share and handling time the range is $0.1M–$1.3M. Model cost is under 2% of what remains.</p>
+<div style="flex:1"></div>
+<p style="font-size:24px;line-height:1.4;color:#8FB5B0">Assumptions: 300k paper claims a year (5%; national average 2%); 8 min manual vs. 3 min per exception; $38/hr loaded cost.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#12303A;border-top:4px solid #5EC4B6;padding:28px 36px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F7F4">Governance</h3>
+<ul style="font-size:26px;line-height:1.4;color:#D5E6E3">
+<li>Synthetic data here. Production needs an OpenAI BAA and Zero Data Retention (which also turns tracing off), with store=false</li>
+<li>Policy in code: rules, guardrail and final routing. A person decides every exception</li>
+<li>Full audit trail per claim: reads, rules, tool calls, model, reviewer</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#12303A;border-top:4px solid #F2A541;padding:28px 36px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F7F4">Next: an 8-week pilot</h3>
+<ul style="font-size:26px;line-height:1.4;color:#D5E6E3">
+<li>Weeks 1–4: time-and-motion baseline, then 500+ labeled real scans run in shadow mode</li>
+<li>Week 5: tune the thresholds; add ICD-10, CPT and NPPES code-set checks</li>
+<li>Weeks 6–8: live on the fax channel; 837P/FHIR to adjudication; SSO</li>
+</ul>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#8FB5B0">Industry context: the 2024 CAQH Index sees about $20B a year in remaining savings from automating manual transactions in medical and dental.</p>
+<aside>At a 60% auto-accept rate and 5% of claims on paper, that's about $1.3M a year in processor capacity, around 17 FTEs, and clean claims ready for adjudication the same day instead of waiting in a keying queue. The biggest swing factors are the paper share and the minutes per paper claim, not the model. At the 2% national paper share, savings are about $0.52M, around 7 FTEs; at 5 minutes per claim and 5% paper, about $0.72M. CAQH's plan-side cost of $1.02 for a manual claim submission covers only the transaction itself, not the lookups, so I treat my 8 minutes as an assumption to measure. Model cost is under 2% of what remains, which is why the cascade is tuned for routing correctness first and cost second. Governance: synthetic data here. Production needs an executed OpenAI BAA with each feature confirmed as covered, and Zero Data Retention, which forces store to false and also makes Agents SDK tracing unavailable, so the DynamoDB audit trail is the record. Next step: an 8-week pilot on 500+ de-identified real scans to replace the assumptions with measurements.</aside>
+</section>
